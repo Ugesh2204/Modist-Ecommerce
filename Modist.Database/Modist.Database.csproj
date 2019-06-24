@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A3061A2-6623-43A4-9271-44389169A833}</ProjectGuid>
+    <ProjectGuid>{582A7EA0-1E67-457C-95F4-F2D814FC361D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modist.Entities</RootNamespace>
-    <AssemblyName>Modist.Entities</AssemblyName>
+    <RootNamespace>Modist.Database</RootNamespace>
+    <AssemblyName>Modist.Database</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,20 +47,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEntity.cs" />
-    <Compile Include="Category.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201906241454185_InitialDataBase.cs" />
+    <Compile Include="Migrations\201906241454185_InitialDataBase.Designer.cs">
+      <DependentUpon>201906241454185_InitialDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modist.Entities\Modist.Entities.csproj">
+      <Project>{2a3061a2-6623-43a4-9271-44389169a833}</Project>
+      <Name>Modist.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modist\Modist.csproj">
       <Project>{4b9368f8-ebc4-4a34-8092-604c78c424eb}</Project>
       <Name>Modist</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <EmbeddedResource Include="Migrations\201906241454185_InitialDataBase.resx">
+      <DependentUpon>201906241454185_InitialDataBase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

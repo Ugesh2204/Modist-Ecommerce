@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Modist.Entities
 {
-    public class Class1
+    public class BaseEntity
     {
+        public int ID { get; set; }
+
+        public string Name { get; set; }
+
+        public string Descriptions { get; set; }
     }
 }
