@@ -64,10 +64,6 @@
       <Project>{2a3061a2-6623-43a4-9271-44389169a833}</Project>
       <Name>Modist.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modist\Modist.csproj">
-      <Project>{4b9368f8-ebc4-4a34-8092-604c78c424eb}</Project>
-      <Name>Modist</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906241454185_InitialDataBase.resx">

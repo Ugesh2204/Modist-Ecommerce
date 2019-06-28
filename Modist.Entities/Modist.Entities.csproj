@@ -53,12 +53,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modist\Modist.csproj">
-      <Project>{4b9368f8-ebc4-4a34-8092-604c78c424eb}</Project>
-      <Name>Modist</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

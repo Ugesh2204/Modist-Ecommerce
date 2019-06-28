@@ -195,6 +195,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -441,6 +442,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -457,6 +460,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modist.Database\Modist.Database.csproj">
+      <Project>{582a7ea0-1e67-457c-95f4-f2d814fc361d}</Project>
+      <Name>Modist.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modist.Entities\Modist.Entities.csproj">
+      <Project>{2A3061A2-6623-43A4-9271-44389169A833}</Project>
+      <Name>Modist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modist.Services\Modist.Services.csproj">
+      <Project>{86df3140-0f5f-4cb4-a81d-d3311259abf4}</Project>
+      <Name>Modist.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

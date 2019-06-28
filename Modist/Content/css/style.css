@@ -7298,10 +7298,13 @@ h1, h2, h3, h4, h5,
 .text-primary {
   color: #f1b8c4 !important; }
 
-.ftco-navbar-light {
-  background: transparent !important;
+
+
+
+    .ftco-navbar-light {
+  background: #ffffff !important;
   position: absolute;
-  top: 20px;
+  top: 0px;
   left: 0;
   right: 0;
   z-index: 3;
@@ -9086,3 +9089,9 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+
+.mybutton {
+    border-radius: 0px !important;
+}
