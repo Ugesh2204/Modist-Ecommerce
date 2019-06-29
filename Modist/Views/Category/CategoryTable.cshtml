@@ -1,0 +1,106 @@
+﻿@model List<Modist.Entities.Category>
+
+
+<br />
+
+
+
+
+
+<form mothod="Post">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label>Search</label>
+                <input class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label>Actions</label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" id ="newBtn" class="btn btn-primary mybutton">Create</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button"  class="btn btn-danger  mybutton">Cancel</button>
+                    </div>
+                    <div class="col-md-4">
+                        <search type="button" class="btn btn-secondary mybutton">Search</search>
+                    </div>
+                </div>
+
+            </div>
+           
+        </div>
+       
+
+    </div>
+</form>
+
+
+<div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated">
+
+    <h2 class="mb-4">List of categories</h2>
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Descriptions</td>
+            <td>Action</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+        @foreach (var category in Model)
+        {
+        <tr>
+            <td>@category.ID</td>
+            <td>@category.Name</td>
+            <td>@category.Descriptions</td>
+
+            <td><button class="btn btn-primary mybutton">Edit</button></td>
+            <td><button class="btn btn-primary mybutton">Delete</button></td>
+        </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+
+<script>
+
+    $("#newBtn").click(function () {
+
+        $.ajax({
+            url: '/Category/Create',
+        })
+
+            .done(function (response) {
+
+              //Debug if response is work
+                //alert(response);
+
+                $("#actionContainer").html(response);
+
+                focusAction("actionContainer");
+            })
+
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Fail");
+            });
+
+    });
+
+</script>

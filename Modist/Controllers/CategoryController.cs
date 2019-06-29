@@ -17,15 +17,25 @@ namespace Modist.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            var ListOfCategory = sc.GetAllCategories();
-            return View(ListOfCategory);
+            
+            return View();
         }
+
+
+        public ActionResult CategoryTable()
+        {
+            var ListOfCategory = sc.GetAllCategories();
+            return PartialView(ListOfCategory);
+        }
+
+
+
 
         [HttpGet]
         public ActionResult Create ()
         {
             
-            return View();
+            return PartialView();
         }
 
         [HttpPost]
@@ -33,7 +43,7 @@ namespace Modist.Controllers
         {
             sc.SaveCategory(category);
 
-            return View();
+            return RedirectToAction("CategoryTable");
         }
     }
 }

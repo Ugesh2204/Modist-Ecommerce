@@ -9,20 +9,42 @@
 
 
 
+
+
 <div class="hero-wrap hero-bread" style="background-image: url('../Content/images/bg_6.jpg');">
 
     <div class="row no-gutters slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated">
-            <h1 class="mb-0 bread">Blog</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+            <h1 class="mb-0 bread">Category</h1>
+
         </div>
     </div>
 
 </div>
 
 
-@foreach(var category in Model)
-{
-<h1>@category.Name</h1>
-<h1>@category.Descriptions</h1>
-}
+<div>
+
+    @{
+        Html.RenderAction("CategoryTable");
+
+    }
+</div>
+
+<hr />
+<div id="actionContainer">
+
+</div>
+
+
+
+
+<script>
+    function focusAction(controlToFocus) {
+        $('html, body').animate({
+            scrollTop: $("#" + controlToFocus).offset().top - 100
+        }, 1000);
+    }
+</script>
+
+
